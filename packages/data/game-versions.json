@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "versionGroups": [
+    { "id": "red-blue", "name": "Red & Blue", "generationId": "gen1", "region": "kanto", "games": ["Red", "Blue"], "releaseDate": "1996-02-27" },
+    { "id": "yellow", "name": "Yellow", "generationId": "gen1", "region": "kanto", "games": ["Yellow"], "releaseDate": "1998-09-12" },
+    { "id": "gold-silver", "name": "Gold & Silver", "generationId": "gen2", "region": "johto", "games": ["Gold", "Silver"], "releaseDate": "1999-11-21" },
+    { "id": "crystal", "name": "Crystal", "generationId": "gen2", "region": "johto", "games": ["Crystal"], "releaseDate": "2000-12-14" },
+    { "id": "ruby-sapphire", "name": "Ruby & Sapphire", "generationId": "gen3", "region": "hoenn", "games": ["Ruby", "Sapphire"], "releaseDate": "2002-11-21" },
+    { "id": "firered-leafgreen", "name": "FireRed & LeafGreen", "generationId": "gen3", "region": "kanto", "games": ["FireRed", "LeafGreen"], "releaseDate": "2004-01-29" },
+    { "id": "emerald", "name": "Emerald", "generationId": "gen3", "region": "hoenn", "games": ["Emerald"], "releaseDate": "2004-09-16" },
+    { "id": "diamond-pearl", "name": "Diamond & Pearl", "generationId": "gen4", "region": "sinnoh", "games": ["Diamond", "Pearl"], "releaseDate": "2006-09-28" },
+    { "id": "platinum", "name": "Platinum", "generationId": "gen4", "region": "sinnoh", "games": ["Platinum"], "releaseDate": "2008-09-13" },
+    { "id": "heartgold-soulsilver", "name": "HeartGold & SoulSilver", "generationId": "gen4", "region": "johto", "games": ["HeartGold", "SoulSilver"], "releaseDate": "2009-09-12" },
+    { "id": "black-white", "name": "Black & White", "generationId": "gen5", "region": "unova", "games": ["Black", "White"], "releaseDate": "2010-09-18" },
+    { "id": "black-2-white-2", "name": "Black 2 & White 2", "generationId": "gen5", "region": "unova", "games": ["Black 2", "White 2"], "releaseDate": "2012-06-23" },
+    { "id": "x-y", "name": "X & Y", "generationId": "gen6", "region": "kalos", "games": ["X", "Y"], "releaseDate": "2013-10-12" },
+    { "id": "omega-ruby-alpha-sapphire", "name": "Omega Ruby & Alpha Sapphire", "generationId": "gen6", "region": "hoenn", "games": ["Omega Ruby", "Alpha Sapphire"], "releaseDate": "2014-11-21" },
+    { "id": "sun-moon", "name": "Sun & Moon", "generationId": "gen7", "region": "alola", "games": ["Sun", "Moon"], "releaseDate": "2016-11-18" },
+    { "id": "ultra-sun-ultra-moon", "name": "Ultra Sun & Ultra Moon", "generationId": "gen7", "region": "alola", "games": ["Ultra Sun", "Ultra Moon"], "releaseDate": "2017-11-17" },
+    { "id": "lets-go-pikachu-eevee", "name": "Let's Go, Pikachu! & Let's Go, Eevee!", "generationId": "gen7", "region": "kanto", "games": ["Let's Go, Pikachu!", "Let's Go, Eevee!"], "releaseDate": "2018-11-16" },
+    { "id": "sword-shield", "name": "Sword & Shield", "generationId": "gen8", "region": "galar", "games": ["Sword", "Shield"], "releaseDate": "2019-11-15" },
+    { "id": "brilliant-diamond-shining-pearl", "name": "Brilliant Diamond & Shining Pearl", "generationId": "gen8", "region": "sinnoh", "games": ["Brilliant Diamond", "Shining Pearl"], "releaseDate": "2021-11-19" },
+    { "id": "legends-arceus", "name": "Legends: Arceus", "generationId": "gen8", "region": "hisui", "games": ["Legends: Arceus"], "releaseDate": "2022-01-28" },
+    { "id": "scarlet-violet", "name": "Scarlet & Violet", "generationId": "gen9", "region": "paldea", "games": ["Scarlet", "Violet"], "releaseDate": "2022-11-18" },
+    { "id": "legends-za", "name": "Legends: Z-A", "generationId": "legends-za", "region": "kalos", "games": ["Legends: Z-A"], "releaseDate": "2025-10-16" }
+  ]
+}
