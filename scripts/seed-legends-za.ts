@@ -10,7 +10,7 @@ import { DATA_DIR, readManifest, today, upsertPackEntry, writeManifest } from ".
 const pack = GenerationPackSchema.parse({
   meta: {
     id: "legends-za",
-    schemaVersion: 1,
+    schemaVersion: 2,
     dataVersion: today(),
     sourceUpdatedAt: new Date().toISOString(),
     status: "partial",

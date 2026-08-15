@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { Image } from "expo-image";
 import type { Form } from "@pokedex/schema";
 import { TypeBadge } from "./type-badge";
 import { StatBar } from "./stat-bar";
@@ -35,7 +36,7 @@ export function FormExplorer({ forms }: { forms: Form[] }) {
 
       <View className="mb-3 items-center">
         {spriteUri ? (
-          <Image source={{ uri: spriteUri }} style={{ width: 140, height: 140 }} resizeMode="contain" />
+          <Image source={{ uri: spriteUri }} style={{ width: 140, height: 140 }} contentFit="contain" cachePolicy="disk" />
         ) : null}
         <View className="mt-2 flex-row gap-2">
           {selected.types.map((t) => (

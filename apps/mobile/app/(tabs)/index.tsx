@@ -3,10 +3,11 @@ import { FlatList, ScrollView, Text, TextInput, View } from "react-native";
 import { useRouter } from "expo-router";
 import { createSearchIndex } from "@pokedex/core";
 import { GENERATION_IDS, POKEMON_TYPES, type GenerationId, type PokemonType, type Species } from "@pokedex/schema";
-import { repository } from "../lib/repository";
-import { PokemonCard } from "../components/pokemon-card";
-import { FilterChip } from "../components/filter-chip";
-import { humanize } from "../lib/format";
+import { repository } from "../../lib/repository";
+import { PokemonCard } from "../../components/pokemon-card";
+import { FilterChip } from "../../components/filter-chip";
+import { ThemeToggle } from "../../components/theme-toggle";
+import { humanize } from "../../lib/format";
 
 const GENERATION_LABELS: Record<GenerationId, string> = {
   gen1: "Gen 1",
@@ -42,13 +43,16 @@ export default function DexListScreen() {
   return (
     <View className="flex-1 bg-slate-50 dark:bg-slate-950">
       <View className="border-b border-slate-200 bg-white px-4 pb-3 pt-2 dark:border-slate-800 dark:bg-slate-900">
-        <TextInput
-          value={query}
-          onChangeText={setQuery}
-          placeholder="Search by name or number"
-          placeholderTextColor="#94a3b8"
-          className="mb-3 rounded-xl bg-slate-100 px-4 py-2.5 text-base text-slate-900 dark:bg-slate-800 dark:text-white"
-        />
+        <View className="mb-3 flex-row items-center gap-3">
+          <TextInput
+            value={query}
+            onChangeText={setQuery}
+            placeholder="Search by name or number"
+            placeholderTextColor="#94a3b8"
+            className="flex-1 rounded-xl bg-slate-100 px-4 py-2.5 text-base text-slate-900 dark:bg-slate-800 dark:text-white"
+          />
+          <ThemeToggle />
+        </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-2">
           <FilterChip label="All Gens" active={!generationId} onPress={() => setGenerationId(undefined)} />
           {GENERATION_IDS.map((id) => (

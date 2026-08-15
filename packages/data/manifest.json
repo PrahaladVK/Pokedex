@@ -2,84 +2,84 @@
   "schemaVersion": 1,
   "packs": [
     {
-      "id": "legends-za",
-      "schemaVersion": 1,
-      "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T18:52:08.200Z",
-      "status": "partial",
-      "file": "generations/legends-za.json"
-    },
-    {
       "id": "gen1",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:42.997Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.439Z",
       "status": "complete",
       "file": "generations/gen1.json"
     },
     {
       "id": "gen2",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.010Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.463Z",
       "status": "complete",
       "file": "generations/gen2.json"
     },
     {
       "id": "gen3",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.017Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.475Z",
       "status": "complete",
       "file": "generations/gen3.json"
     },
     {
       "id": "gen4",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.025Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.488Z",
       "status": "complete",
       "file": "generations/gen4.json"
     },
     {
       "id": "gen5",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.030Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.498Z",
       "status": "complete",
       "file": "generations/gen5.json"
     },
     {
       "id": "gen6",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.037Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.507Z",
       "status": "complete",
       "file": "generations/gen6.json"
     },
     {
       "id": "gen7",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.040Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.512Z",
       "status": "complete",
       "file": "generations/gen7.json"
     },
     {
       "id": "gen8",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.044Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.518Z",
       "status": "complete",
       "file": "generations/gen8.json"
     },
     {
       "id": "gen9",
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "dataVersion": "2026.08.15",
-      "sourceUpdatedAt": "2026-08-15T19:03:43.049Z",
+      "sourceUpdatedAt": "2026-08-15T19:37:30.524Z",
       "status": "complete",
       "file": "generations/gen9.json"
+    },
+    {
+      "id": "legends-za",
+      "schemaVersion": 2,
+      "dataVersion": "2026.08.15",
+      "sourceUpdatedAt": "2026-08-15T19:37:36.983Z",
+      "status": "partial",
+      "file": "generations/legends-za.json"
     }
   ]
 }

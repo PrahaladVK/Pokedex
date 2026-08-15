@@ -1,6 +1,8 @@
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
+import { Image } from "expo-image";
 import type { Species } from "@pokedex/schema";
 import { TypeBadge } from "./type-badge";
+import { FavoriteButton } from "./favorite-button";
 
 export function PokemonCard({
   species,
@@ -18,7 +20,7 @@ export function PokemonCard({
     >
       <View className="mr-3 h-16 w-16 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700">
         {spriteUrl ? (
-          <Image source={{ uri: spriteUrl }} style={{ width: 56, height: 56 }} resizeMode="contain" />
+          <Image source={{ uri: spriteUrl }} style={{ width: 56, height: 56 }} contentFit="contain" cachePolicy="disk" />
         ) : (
           <Text className="text-slate-400">?</Text>
         )}
@@ -34,6 +36,7 @@ export function PokemonCard({
           ))}
         </View>
       </View>
+      <FavoriteButton speciesId={species.id} />
     </Pressable>
   );
 }

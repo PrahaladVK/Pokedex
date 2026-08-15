@@ -47,6 +47,8 @@ pnpm mobile           # expo start: scan the QR code with Expo Go, or press w fo
 
 True iOS/Android testing requires a device or simulator via `expo start`. The web target (`w` in the Expo CLI, or `expo start --web`) is the fastest way to preview UI changes during development.
 
+App icon/splash/adaptive-icon artwork is generated from the SVGs in `scripts/assets/` via `pnpm generate:icons` (uses `sharp`); edit the SVGs and re-run to update.
+
 ## Releasing
 
 1. Bump `version` in the root `package.json` and in `apps/mobile/package.json` / `app.json` (keep them in sync).

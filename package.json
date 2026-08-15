@@ -1,6 +1,6 @@
 {
   "name": "pokedex",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "description": "A Pokedex covering Gen 1-9 and Pokemon Legends Z-A, with versioned data packs and in-game version tracking.",
@@ -19,6 +19,7 @@
     "sync:pokeapi": "tsx scripts/sync-pokeapi.ts",
     "seed:legends-za": "tsx scripts/seed-legends-za.ts",
     "validate:data": "pnpm --filter @pokedex/core test",
+    "generate:icons": "tsx scripts/generate-icons.ts",
     "mobile": "pnpm --filter @pokedex/mobile start"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
+    "sharp": "^0.35.3",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },

@@ -67,6 +67,64 @@ function extractStats(pokemon: any): BaseStats {
   };
 }
 
+function extractEvYield(pokemon: any): Record<string, number> {
+  const nameToKey: Record<string, string> = {
+    hp: "hp",
+    attack: "attack",
+    defense: "defense",
+    "special-attack": "specialAttack",
+    "special-defense": "specialDefense",
+    speed: "speed",
+  };
+  const yields: Record<string, number> = {};
+  for (const s of pokemon.stats as any[]) {
+    const key = nameToKey[s.stat.name];
+    if (key && s.effort > 0) yields[key] = s.effort;
+  }
+  return yields;
+}
+
+function extractSpritesByVersionGroup(pokemon: any): Record<string, { front?: string; frontShiny?: string }> {
+  const result: Record<string, { front?: string; frontShiny?: string }> = {};
+  const versions = pokemon.sprites?.versions ?? {};
+  for (const generationSlug of Object.keys(versions)) {
+    for (const [versionGroupSlug, sprites] of Object.entries(versions[generationSlug] as Record<string, any>)) {
+      const vgId = VERSION_GROUP_SLUG_TO_ID[versionGroupSlug];
+      if (!vgId || result[vgId]) continue;
+      const front = sprites?.front_default ?? undefined;
+      const frontShiny = sprites?.front_shiny ?? undefined;
+      if (front || frontShiny) result[vgId] = { front, frontShiny };
+    }
+  }
+  return result;
+}
+
+function extractTraining(species: any, baseExperience: number | undefined) {
+  return {
+    catchRate: species.capture_rate,
+    baseFriendship: species.base_happiness,
+    baseExperience,
+    growthRate: species.growth_rate?.name ?? "unknown",
+  };
+}
+
+function extractBreeding(species: any) {
+  return {
+    eggGroups: (species.egg_groups as any[]).map((g) => g.name),
+    genderRate: species.gender_rate,
+    eggCycles: species.hatch_counter ?? undefined,
+  };
+}
+
+function extractRegionalDexNumbers(species: any): Record<string, number> {
+  const result: Record<string, number> = {};
+  for (const entry of species.pokedex_numbers as any[]) {
+    if (entry.pokedex.name === "national" || entry.entry_number <= 0) continue;
+    result[entry.pokedex.name] = entry.entry_number;
+  }
+  return result;
+}
+
 function extractSprites(pokemon: any) {
   return {
     front: pokemon.sprites?.front_default ?? undefined,
@@ -92,6 +150,7 @@ async function processSpecies(name: string, genId: GenerationId): Promise<void> 
   let defaultAbilities: AbilitySlot[] = [];
   let heightM: number | undefined;
   let weightKg: number | undefined;
+  let baseExperience: number | undefined;
   const extraAvailability = new Set<string>();
 
   await Promise.all(
@@ -122,9 +181,11 @@ async function processSpecies(name: string, genId: GenerationId): Promise<void> 
           types,
           abilities,
           baseStats: stats,
+          evYield: extractEvYield(pokemon),
           introducedIn,
           isDefault: variety.is_default,
           sprites: extractSprites(pokemon),
+          spritesByVersionGroup: extractSpritesByVersionGroup(pokemon),
         };
         formsMap.set(form.id, form);
         formIds.push(form.id);
@@ -135,6 +196,7 @@ async function processSpecies(name: string, genId: GenerationId): Promise<void> 
           defaultAbilities = abilities;
           heightM = pokemon.height ? pokemon.height / 10 : undefined;
           weightKg = pokemon.weight ? pokemon.weight / 10 : undefined;
+          baseExperience = pokemon.base_experience ?? undefined;
         }
       }),
     ),
@@ -176,6 +238,9 @@ async function processSpecies(name: string, genId: GenerationId): Promise<void> 
     evolutions: [],
     availability: [...availability],
     flavorText,
+    training: extractTraining(species, baseExperience),
+    breeding: extractBreeding(species),
+    regionalDexNumbers: extractRegionalDexNumbers(species),
     evolutionChainId,
   });
 }
@@ -302,7 +367,7 @@ async function main() {
     const pack = {
       meta: {
         id: genId,
-        schemaVersion: 1,
+        schemaVersion: 2,
         dataVersion,
         sourceUpdatedAt: new Date().toISOString(),
         status: "complete" as const,
